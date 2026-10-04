@@ -1,0 +1,100 @@
+PUBLIC :
+
+Home page,
+About us,
+Navbar{
+    LOGO
+    course catalog, for adv,
+    about us button
+    (
+        login ? 
+        dashboard, profile pic
+        : login option
+    )
+    notes: profile pic is not stored in backend, nor do we intend to, we will create a prorile pic on go using third party api, 
+    like if my name is ayush kumar, profile -> AK 
+
+    -> Login capability is for all
+    -> signup is not for all user, as the sigup can be only done by assistant, and a automatic mail will be sent to the email
+
+}
+Footer
+course Catalog -> three cards of categories, and all course card in those catageories when clicked.
+
+
+
+
+Student : 
+cant signup, also cant enroll, dont create unnecery entity stuff, (all done by assistant)
+
+Sidebar{
+    student can see his enrolled batches
+        ,if clicked on some batch :
+            time and venue and details like modules and certificate and test links, progress, fee status, attendence related to that batch, notification of that batch
+            these seperate thigns should be under ecah batch and in differnet pages.
+    Global notification can be seen
+    Profile edit :
+        Some important info cant be changed, like aadhar and name etc etc, 
+        main function is a button of change password in profile edit.
+    Complaints :
+        his complaints, keep consistant with sql schema
+}
+
+
+Teacher :
+cant signup , cant enroll a student, dont create unnecery stuff, 
+create test related to his batch only, mark attendence of students of his batch only, 
+batch notifcation create, cant delete batch notification, as our schema dont allow it, as last notifcation id cant be stacked backward
+can score student of his batch in the test of his batch
+
+Sidebar{
+    teacher can see his taught batches
+        ,if clicked on some batch :
+            time and venue and details like modules and certificate and test links, progress, attendence related to that batch, notification of that batch
+            these seperate thigns should be under ecah batch and in differnet pages.
+    Global notification can be seen
+    Profile edit :
+        Some important info cant be changed, like aadhar and name etc etc, 
+        main function is a button of change password in profile edit.
+    Complaints :
+        his complaints, keep consistant with sql schema
+    Salary status : 
+        for each month he can see if he got his salary or not, how much and the refence no related to it. 
+        (same with fee, this is the only primary key shown on frontend, the referenec number fo salary and fee)
+}
+
+
+Assistant:
+can create any entity (expect admin), must be different pages
+
+sidebar{
+    student -> signup
+    teacher -> signup, salary, teacher attendence mark
+    courses -> courses create, update, search
+    Batch -> create batch of eisting courses, and assign existing teacher, (should be easy to use UI, no ID should be used, click and tyoe only)
+    enroll -> create enrollement of existing studnt into existing batches
+    complain -> can add his or her complain
+    add certification of enrollements
+    handle salary and fee physically and just add an entry of it
+    add global notfication, cant delete it 
+    attendnce mark of anny student related to any batch and teacher attendce also
+    basically it have acecess to everthing
+    assistant can add salary record for this salary and also can track his salary.
+    also can mark his attence and track his attendence
+
+    note : assissant cant delete, student, teacher, assistant, notifications of any kind -> can delete any other thing.
+}
+
+
+Admin: 
+can do anything that assitant can do
+extra things -> delete account of student, teacher or assistant.
+extra -> can see complain, but cant add.
+can see everything
+
+
+
+all global notificationa and bacth notification, is null means nothing have been saw ok, so handle null according in this case
+
+make sure most things are happening under batches or enrollement, means each enrollemnt or batch must remain different
+

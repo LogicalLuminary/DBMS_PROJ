@@ -28,7 +28,7 @@ public class StudentController {
     public ResponseEntity<Student> getById(@PathVariable Integer Student_id) {
         return ResponseEntity.ok(service.getById(Student_id));
     }
-
+    
     @PostMapping
     public ResponseEntity<Student> create(@RequestBody Student entity) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(entity));

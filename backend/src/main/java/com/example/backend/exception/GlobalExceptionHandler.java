@@ -4,9 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.ErrorResponseException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -64,6 +66,25 @@ public class GlobalExceptionHandler {
                 "DATA_CONFLICT",
                 "The request conflicts with existing data or violates a database constraint"
         );
+    }
+
+    @ExceptionHandler(ErrorResponseException.class)
+    public ResponseEntity<ApiErrorResponse> handleSpringHttpError(ErrorResponseException ex) {
+        HttpStatusCode status = ex.getStatusCode();
+        String message = status.is4xxClientError()
+                ? ex.getBody().getDetail()
+                : "An unexpected server error occurred";
+        HttpStatus knownStatus = HttpStatus.resolve(status.value());
+        String error = knownStatus == null ? "HTTP Error" : knownStatus.getReasonPhrase();
+        ApiErrorResponse body = new ApiErrorResponse(
+                LocalDateTime.now(),
+                status.value(),
+                "HTTP_" + status.value(),
+                error,
+                message,
+                Map.of()
+        );
+        return ResponseEntity.status(status).body(body);
     }
 
     @ExceptionHandler(Exception.class)

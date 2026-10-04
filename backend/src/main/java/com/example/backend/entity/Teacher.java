@@ -48,7 +48,8 @@ public class Teacher {
     @Column(name = "Aadhar_id")
     private String Aadhar_id;
 
-    @Column(name = "LastSeen_Global_Notification_id")
+    // Changed to all lowercase to prevent Hibernate from inserting an underscore between last and seen
+    @Column(name = "lastseen_global_notification_id")
     private Integer LastSeen_Global_Notification_id;
 
     public Teacher() {}

@@ -1,0 +1,80 @@
+.notifications-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.flex-between-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.announcement-form-card {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.announcement-form-card h3 {
+  color: #166534;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.notifications-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.notification-card {
+  background: white;
+  border-left: 4px solid #3b82f6;
+  border-radius: 6px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.notif-header h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+  flex: 1;
+}
+
+.notif-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.notif-body {
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 640px) {
+  .notif-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

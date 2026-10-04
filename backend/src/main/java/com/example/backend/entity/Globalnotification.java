@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 @Entity
-@Table(name = "GlobalNotification")
+@Table(name = "globalnotification")
 public class Globalnotification {
 
     @Id

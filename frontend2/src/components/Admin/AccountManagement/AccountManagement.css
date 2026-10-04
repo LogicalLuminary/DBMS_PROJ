@@ -1,0 +1,62 @@
+.admin-management-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.danger-header h2 {
+  color: #991b1b;
+}
+
+.danger-zone-card {
+  background: #fff5f5;
+  border: 1px solid #fecaca;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(220, 38, 38, 0.1);
+  margin-top: 1rem;
+}
+
+.danger-zone-card h3 {
+  color: #991b1b;
+  margin-top: 0;
+  border-bottom: 2px solid #fecaca;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 0.9rem;
+  font-style: italic;
+  padding: 0.75rem 0;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 0.875rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.delete-btn:disabled {
+  background-color: #fca5a5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .danger-zone-card {
+    padding: 1.25rem;
+  }
+}

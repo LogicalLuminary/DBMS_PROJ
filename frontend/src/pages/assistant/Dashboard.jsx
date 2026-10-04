@@ -15,6 +15,12 @@ const dashboardItems = [
     icon: "bi-book",
   },
   {
+    title: "Course Modules",
+    description: "Create, update, and manage modules within courses.",
+    path: "/assistant/course-modules",
+    icon: "bi-journal-text",
+},
+  {
     title: "Batches",
     description: "Create and manage batches and schedules.",
     path: "/assistant/batches",
@@ -67,6 +73,18 @@ const dashboardItems = [
     description: "Manage teacher salary payments and records.",
     path: "/assistant/salaries",
     icon: "bi-wallet2",
+  },
+  {
+    title: "Schedules",
+    description: "Manage scheduled days for each batch.",
+    path: "/assistant/schedules",
+    icon: "bi-calendar-week",
+  },
+  {
+    title: "Enrollments",
+    description: "Enroll students in batches and manage enrollment records.",
+    path: "/assistant/enrollments",
+    icon: "bi-person-check",
   },
 ];
 
