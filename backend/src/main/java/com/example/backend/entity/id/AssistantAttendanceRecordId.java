@@ -15,7 +15,6 @@ public class AssistantAttendanceRecordId implements Serializable {
         this.Date = Date;
         this.Assistant_id = Assistant_id;
     }
-
     public LocalDate getDate() { return Date; }
     public void setDate(LocalDate Date) { this.Date = Date; }
 
